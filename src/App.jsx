@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+import React, { useState } from 'react';
+import RoomAvailability from './components/RoomAvailability';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [date, setDate] = useState('');
+  const [roomType, setRoomType] = useState('');
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      <h1>Sistema de Reservas de Hotel</h1>
+      <RoomAvailability date={date} roomType={roomType} />
 
-export default App
+      <div>
+        <label>Selecciona una fecha:</label>
+        <input 
+          type="date" 
+          value={date} 
+          onChange={(e) => setDate(e.target.value)} 
+        />
+
+        <label>Selecciona un tipo de habitación:</label>
+        <select onChange={(e) => setRoomType(e.target.value)} value={roomType}>
+          <option value="">Seleccionar...</option>
+          <option value="simple">Simple</option>
+          <option value="doble">Doble</option>
+          <option value="suite">Suite</option>
+        </select>
+      </div>
+    </div>
+  );
+};
+
+export default App;
