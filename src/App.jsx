@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import RoomAvailability from './components/RoomAvailability';  // Componente para verificar disponibilidad
 import NotificationComponent from './components/NotificationComponent';  // Componente de Notificaciones
 import HotelComponent from './components/HotelComponent';  // Componente de Hoteles
+import UsuarioServicio from './components/UsuarioServicio';
 import './App.css';  // Estilos globales de la aplicación
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
               <li><Link to="/disponibilidad">Servicio de Disponibilidad</Link></li>
               <li><Link to="/notificaciones">Servicio de Notificaciones</Link></li>
               <li><Link to="/hoteles">Servicio de Hoteles</Link></li>
+              <li><Link to="/usuarios">Servicio de Usuarios</Link></li>
             </ul>
 
           </div>
@@ -48,6 +50,7 @@ const App = () => {
           <Route path="/disponibilidad" element={<RoomAvailability />} />
           <Route path="/notificaciones" element={<NotificationComponent />} />
           <Route path="/hoteles" element={<HotelComponent />} />
+          <Route path="/usuarios" element={<UsuarioServicio />} />
         </Routes>
       </div>
     </Router>
