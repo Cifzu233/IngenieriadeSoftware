@@ -5,8 +5,8 @@ const ReservaComponent = () => {
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
-    fechaEntrada: "",
-    fechaSalida: ""
+    fecha_entrada: "", 
+    fecha_salida: ""
   });
 
   const [mensaje, setMensaje] = useState("");
@@ -26,8 +26,8 @@ const ReservaComponent = () => {
       setFormData({
         nombre: "",
         email: "",
-        fechaEntrada: "",
-        fechaSalida: ""
+        fecha_entrada: "", 
+        fecha_salida: ""
       });
     } catch (error) {
       setMensaje("Hubo un error al crear la reserva");
@@ -48,11 +48,11 @@ const ReservaComponent = () => {
         </div>
         <div>
           <label>Fecha de entrada:</label>
-          <input type="date" name="fechaEntrada" value={formData.fechaEntrada} onChange={handleChange} required />
-        </div>
+          <input type="date" name="fecha_entrada" value={formData.fechaEntrada} onChange={handleChange} required />
+        </div>ss
         <div>
           <label>Fecha de salida:</label>
-          <input type="date" name="fechaSalida" value={formData.fechaSalida} onChange={handleChange} required />
+          <input type="date" name="fecha_salida" value={formData.fechaSalida} onChange={handleChange} required />
         </div>
         <button type="submit">Reservar</button>
       </form>

@@ -1,18 +1,13 @@
-// services/ReservaService.jsx
-const API_URL = "http://localhost:5000/api/reservas"; 
+import axios from 'axios';
+
+const API_URL = 'http://localhost:5000/api/reservas'; 
 
 export const crearReserva = async (datos) => {
   try {
-    const res = await fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(datos),
-    });
-    return await res.json();
+    const response = await axios.post(API_URL, datos);
+    return response.data;
   } catch (error) {
-    console.error("Error al crear reserva:", error);
+    console.error('Error al crear la reserva:', error.response?.data || error.message);
     throw error;
   }
 };
