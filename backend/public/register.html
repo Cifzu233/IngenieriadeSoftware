@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro Hotel Playa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a2d9d5c56b.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to right, #ffcc70, #ff6f61, #ff9472);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      padding: 40px 35px;
+      max-width: 480px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-container::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 180px;
+      height: 180px;
+      background: url('https://img.icons8.com/emoji/96/beach-with-umbrella.png') no-repeat center;
+      background-size: contain;
+      opacity: 0.15;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #d84315;
+      font-size: 26px;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 14px;
+      left: 12px;
+      color: #ff6f61;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 12px 12px 36px;
+      border: 1px solid #ffd180;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #ff6f61;
+      box-shadow: 0 0 6px #ffab91;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(to right, #ff6f61, #f4511e);
+      border: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #e64a19, #bf360c);
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    @media (max-width: 500px) {
+      .form-container {
+        padding: 30px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Registro - Hotel Playa Sol</h1>
+    <form action="/api/usuarios" method="POST">
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input name="nombre" placeholder="Nombre completo" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input name="email" type="email" placeholder="Correo electrónico" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input name="password" type="password" placeholder="Contraseña" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-calendar-alt"></i>
+        <input name="fechaNacimiento" type="date" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-id-card"></i>
+        <input name="dpi" placeholder="DPI" required />
+      </div>
+      <button type="submit">Registrarse</button>
+    </form>
+    <p class="footer-note">Bienvenido a nuestro paraíso frente al mar</p>
+  </div>
+</body>
+</html>
